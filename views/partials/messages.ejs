@@ -1,0 +1,19 @@
+<% if(typeof messages != 'undefined') { %>
+<div class="alert alert-danger alert-dismissible deposit-alert" role="alert">
+  <div class="container">
+    <%= messages %>
+  </div>
+</div>
+<% } %> <% if(typeof error != 'undefined') { %>
+<div class="alert alert-danger alert-dismissible deposit-alert" role="alert">
+  <div class="container">
+    <%= error %>
+  </div>
+</div>
+<% } %> <% if(typeof success != 'undefined') { %>
+<div class="alert alert-danger alert-dismissible deposit-alert" role="alert">
+  <div class="container">
+    <%= success %>
+  </div>
+</div>
+<% } %>

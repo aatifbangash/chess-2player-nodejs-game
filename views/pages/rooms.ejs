@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/css/simple-sidebar.css" />
+  </head>
+
+  <body>
+    <body>
+      <div class="d-flex" id="wrapper">
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <% include ../partials/admin-nav.ejs %>
+
+          <div class="container-fluid">
+            <h2 class="mt-4">Game Rooms</h2>
+            
+            <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Options</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% if (typeof rooms != 'undefined' && rooms.length > 0) { %> 
+                    <% rooms.forEach((room) => { %> 
+                      <tr>
+                        <th scope="row"><%=room.id%></th>
+                        <td><%=room.name%></td>
+                        <td><a href="/room/<%=room.id%>" class="btn btn-secondary">Join</a></td>
+                      </tr>
+                    <% }) %>
+                  <% } %>
+                </tbody>
+              </table>
+          </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+      </div>
+      <!-- /#wrapper -->
+  </body>
+</html>
